@@ -1,0 +1,412 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (FirstNumber == 10) {
+        if (_1.overlapsWith(Selector)) {
+            FirstNumber = 1
+        } else if (_2.overlapsWith(Selector)) {
+            FirstNumber = 2
+        } else if (_3.overlapsWith(Selector)) {
+            FirstNumber = 3
+        } else if (_4.overlapsWith(Selector)) {
+            FirstNumber = 4
+        } else if (_5.overlapsWith(Selector)) {
+            FirstNumber = 5
+        } else if (_6.overlapsWith(Selector)) {
+            FirstNumber = 6
+        } else if (_7.overlapsWith(Selector)) {
+            FirstNumber = 7
+        } else if (_8.overlapsWith(Selector)) {
+            FirstNumber = 8
+        } else if (_9.overlapsWith(Selector)) {
+            FirstNumber = 9
+        } else if (_0.overlapsWith(Selector)) {
+            FirstNumber = 0
+        }
+        Operation = 5
+    } else if (Operation == 5) {
+        if (_.overlapsWith(Selector)) {
+            Operation = 1
+        } else if (_10.overlapsWith(Selector)) {
+            Operation = 2
+        } else if (_11.overlapsWith(Selector)) {
+            Operation = 3
+        } else if (_12.overlapsWith(Selector)) {
+            Operation = 4
+        }
+        SecondNumber = 10
+    } else if (FirstNumber < 10 && SecondNumber < 10) {
+        if (Enter.overlapsWith(Selector)) {
+            if (Operation == 1) {
+                game.splash("" + FirstNumber + "+" + SecondNumber + "=" + Answer)
+                game.reset()
+            } else if (Operation == 2) {
+                game.splash("" + FirstNumber + "-" + SecondNumber + "=" + Answer2)
+                game.reset()
+            } else if (Operation == 3) {
+                game.splash("" + FirstNumber + "*" + SecondNumber + "=" + Answer3)
+                game.reset()
+            } else if (Operation == 4) {
+                game.splash("" + FirstNumber + "/" + SecondNumber + "=" + Answer4)
+                game.reset()
+            }
+        }
+    } else if (SecondNumber == 10) {
+        if (_1.overlapsWith(Selector)) {
+            SecondNumber = 1
+        } else if (_2.overlapsWith(Selector)) {
+            SecondNumber = 2
+        } else if (_3.overlapsWith(Selector)) {
+            SecondNumber = 3
+        } else if (_4.overlapsWith(Selector)) {
+            SecondNumber = 4
+        } else if (_5.overlapsWith(Selector)) {
+            SecondNumber = 5
+        } else if (_6.overlapsWith(Selector)) {
+            SecondNumber = 6
+        } else if (_7.overlapsWith(Selector)) {
+            SecondNumber = 7
+        } else if (_8.overlapsWith(Selector)) {
+            SecondNumber = 8
+        } else if (_9.overlapsWith(Selector)) {
+            SecondNumber = 9
+        } else if (_0.overlapsWith(Selector)) {
+            SecondNumber = 0
+        }
+    }
+})
+let Answer4 = 0
+let Answer3 = 0
+let Answer2 = 0
+let Answer = 0
+let Operation = 0
+let SecondNumber = 0
+let FirstNumber = 0
+let Selector: Sprite = null
+let _12: Sprite = null
+let _11: Sprite = null
+let _10: Sprite = null
+let _: Sprite = null
+let Enter: Sprite = null
+let _9: Sprite = null
+let _8: Sprite = null
+let _7: Sprite = null
+let _6: Sprite = null
+let _5: Sprite = null
+let _4: Sprite = null
+let _3: Sprite = null
+let _2: Sprite = null
+let _1: Sprite = null
+let _0: Sprite = null
+scene.setBackgroundColor(1)
+_1 = sprites.create(img`
+    . . . . . . . f f . . . . . . .
+    . . . . . . f f f . . . . . . .
+    . . . . . f f f f . . . . . . .
+    . . . . f f f f f . . . . . . .
+    . . . f f f f f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . f f f f f f f f f f . . .
+    . . . f f f f f f f f f f . . .
+`, SpriteKind.Player)
+_1.setPosition(15, 15)
+_2 = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . f f f f f f f f f . . . .
+    . . f f f f f f f f f f f . . .
+    . . . f f f f f f f f f f . . .
+    . . . . . . . . . . f f f . . .
+    . . . . . . . . . . f f f . . .
+    . . . . . . . . . . f f f . . .
+    . . . . . . . . . f f f f . . .
+    . . . . . . . . f f f f . . . .
+    . . . . . . . f f f f . . . . .
+    . . . . . . f f f f . . . . . .
+    . . . . . f f f f . . . . . . .
+    . . . . f f f f . . . . . . . .
+    . . . f f f f . . . . . . . . .
+    . . f f f f f f f f f f f f . .
+    . . f f f f f f f f f f f f f .
+`, SpriteKind.Player)
+_2.setPosition(45, 15)
+_3 = sprites.create(img`
+    . . . f f f f f f f f . . . . .
+    . . . f f f f f f f f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . f f f . . . .
+    . . . f f f f f f f f f . . . .
+    . . . f f f f f f f f f . . . .
+    . . . . . . . . . f f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . f f f f f f f f f . . . .
+    . . . f f f f f f f f . . . . .
+`, SpriteKind.Player)
+_3.setPosition(75, 15)
+_4 = sprites.create(img`
+    . . . . . . . . f f f . . . . .
+    . . . . . . . f f f f . . . . .
+    . . . . . . f f . f f . . . . .
+    . . . . . f f . . f f . . . . .
+    . . . . f f . . . f f . . . . .
+    . . . f f . . . . f f . . . . .
+    . . f f . . . . . f f . . . . .
+    . . f f f f f f f f f f f f . .
+    . . f f f f f f f f f f f f . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+`, SpriteKind.Player)
+_4.setPosition(15, 35)
+_5 = sprites.create(img`
+    . . . f f f f f f f f f f f . .
+    . . . f f f f f f f f f f f . .
+    . . . f f . . . . . . . . . . .
+    . . . f f . . . . . . . . . . .
+    . . . f f . . . . . . . . . . .
+    . . . f f . . . . . . . . . . .
+    . . . f f f f f f f f f f . . .
+    . . . f f f f f f f f f f f . .
+    . . . . . . . . . . . . f f . .
+    . . . . . . . . . . . . f f . .
+    . . . . . . . . . . . . f f . .
+    . . . . . . . . . . . . f f . .
+    . . . . . . . . . . . . f f . .
+    . . . . . . . . . . . . f f . .
+    . . . f f f f f f f f f f f . .
+    . . . f f f f f f f f f f . . .
+`, SpriteKind.Player)
+_5.setPosition(45, 35)
+_6 = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . f f . . . . . . . .
+    . . . . . . f . . . . . . . . .
+    . . . . . f f . . . . . . . . .
+    . . . . . f f . . . . . . . . .
+    . . . . . f . . . . . . . . . .
+    . . . . f f . . . . . . . . . .
+    . . . . f f f f f f f . . . . .
+    . . . . f f f f f f f f . . . .
+    . . . f f f . . . . f f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f f . . . . f f f . . .
+    . . . . f f f f f f f f . . . .
+`, SpriteKind.Player)
+_6.setPosition(75, 35)
+_7 = sprites.create(img`
+    . . f f f f f f f f f f f . . .
+    . . f f f f f f f f f f f . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . . f f . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . f f . . . . . .
+    . . . . . . . . f f . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . f f . . . . . . . .
+    . . . . . . f f . . . . . . . .
+    . . . . . f f . . . . . . . . .
+    . . . . . f f . . . . . . . . .
+    . . . . . f f . . . . . . . . .
+    . . . . . f f . . . . . . . . .
+`, SpriteKind.Player)
+_7.setPosition(15, 60)
+_8 = sprites.create(img`
+    . . . . f f f f f f f f . . . .
+    . . . f f f . . . . f f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . . f f . . . . f f . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . f f . . . . f f . . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f f . . . . f f f . . .
+    . . . . f f f f f f f f . . . .
+`, SpriteKind.Player)
+_8.setPosition(45, 60)
+_9 = sprites.create(img`
+    . . . . f f f f f f f f . . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . f f . . . . . . f f . . .
+    . . . . f f f f f f f f . . . .
+    . . . . . f f f f f f f . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . . f f . . . . .
+    . . . . . . . . f f . . . . . .
+    . . . . . . . . f f . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . f f . . . . . . . .
+    . . . . . . f f . . . . . . . .
+    . . . . . . f f . . . . . . . .
+`, SpriteKind.Player)
+_9.setPosition(75, 60)
+_0 = sprites.create(img`
+    . . . f f f f f f f f f f . . .
+    . . f f f f f f f f f f f f . .
+    . . f f . . . . . . . f f f . .
+    . . f f . . . . . . . f f f . .
+    . . f f . . . . . . f f f f . .
+    . . f f . . . . . . f . f f . .
+    . . f f . . . . . f f . f f . .
+    . . f f . . . . f f . . f f . .
+    . . f f . . . f f . . . f f . .
+    . . f f . . f f . . . . f f . .
+    . . f f . f f . . . . . f f . .
+    . . f f . f . . . . . . f f . .
+    . . f f f f . . . . . . f f . .
+    . . f f f . . . . . . . f f . .
+    . . f f f f f f f f f f f f . .
+    . . . f f f f f f f f f f . . .
+`, SpriteKind.Player)
+_0.setPosition(95, 35)
+Enter = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . f . . . .
+    . . . . . . . . . . . f f . . .
+    . . . . . . . . . . . f f f . .
+    f f f f f f f f f f f f f f f .
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f .
+    . . . . . . . . . . . f f f . .
+    . . . . . . . . . . . f f . . .
+    . . . . . . . . . . . f . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Player)
+Enter.setPosition(115, 35)
+_ = sprites.create(img`
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+`, SpriteKind.Player)
+_.setPosition(15, 85)
+_10 = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Player)
+_10.setPosition(45, 85)
+_11 = sprites.create(img`
+    f f . . . . . . . . . . . . f f
+    f f f . . . . . . . . . . f f f
+    . f f f . . . . . . . . f f f .
+    . . f f f . . . . . . f f f . .
+    . . . f f f . . . . f f f . . .
+    . . . . f f f . . f f f . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . . . f f f f . . . . . .
+    . . . . . . f f f f . . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . f f f . . f f f . . . .
+    . . . f f f . . . . f f f . . .
+    . . f f f . . . . . . f f f . .
+    . f f f . . . . . . . . f f f .
+    f f f . . . . . . . . . . f f f
+    f f . . . . . . . . . . . . f f
+`, SpriteKind.Player)
+_11.setPosition(75, 85)
+_12 = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . f f . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Player)
+_12.setPosition(105, 85)
+Selector = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . 2 2 . . . . . . .
+    . . . . . . 4 4 4 4 . . . . . .
+    . . . . . 4 5 5 5 5 4 . . . . .
+    . . . . 2 4 5 1 1 5 4 2 . . . .
+    . . . . 2 4 5 1 1 5 4 2 . . . .
+    . . . . . 4 5 5 5 5 4 . . . . .
+    . . . . . . 4 4 4 4 . . . . . .
+    . . . . . . . 2 2 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Player)
+controller.moveSprite(Selector)
+FirstNumber = 10
+SecondNumber = 0
+Operation = 0
+forever(function () {
+    Answer = FirstNumber + SecondNumber
+    Answer2 = FirstNumber - SecondNumber
+    Answer3 = FirstNumber * SecondNumber
+    Answer4 = FirstNumber / SecondNumber
+})
